@@ -35,6 +35,8 @@ class CategoryTest extends TestCase
             'name' => 'test1'
         ]);
         $category->refresh();
+
+        $this->assertEquals(36, strlen($category->id));
         $this->assertEquals('test1', $category->name);
         $this->assertNull($category->description);
         $this->assertTrue($category->is_active);
