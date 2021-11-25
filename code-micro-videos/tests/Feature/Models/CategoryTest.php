@@ -4,8 +4,6 @@ namespace Tests\Feature\Models;
 
 use App\Models\Category;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class CategoryTest extends TestCase
@@ -89,7 +87,7 @@ class CategoryTest extends TestCase
     public function testDelete()
     {
         $category = factory(Category::class)->create();
-        
+
         $category->delete();
         $this->assertNull(Category::find($category->id));
 
